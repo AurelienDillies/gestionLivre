@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!
+{% endblock %}
+
+{% block body %}
+	
+	<header>
+		<a href="{{ path('app_home') }}">Acceuil</a>
+        <a href="{{ path('app_create') }}">Création de livres</a>
+	</header>
+
+	<div>
+
+		{% for book in allbook %}
+			<p>
+				Titre :
+				{{ book.titre }}
+			</p>
+            <p>
+				Id :
+				{{book.id}}
+			</p>
+			<a href="{{path('app_resumer', {id:book.id}) }}">
+
+				<button>
+					voir le profil
+				</button>
+			</a>
+			<hr>
+		{% endfor %}
+
+	</div>
+{% endblock %}

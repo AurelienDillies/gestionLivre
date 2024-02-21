@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets    %}
+	<link rel="stylesheet" href="{{ asset('css/form.css') }}">
+{% endblock %}
+{% block body %}
+
+	<header>
+		<a href="{{ path('app_home') }}">Acceuil</a>
+        <a href="{{ path('app_create') }}">Création de livres</a>
+	</header>
+
+    <div>
+		<h3>Ajouter un livre:
+		</h3>
+		{{ form_start(form) }}
+	{{ form_label(form.titre) }}
+	{{ form_widget(form.titre)}}
+	<div class="form-error">{{ form_errors(form.titre) }}</div>
+
+
+	{{ form_label(form.resumer) }}
+	{{ form_widget(form.resumer)}}
+	<div class="form-error">{{ form_errors(form.resumer) }}</div>
+
+
+	{{ form_label(form.description) }}
+	{{ form_widget(form.description)}}
+	<div class="form-error">{{ form_errors(form.description) }}</div>
+
+
+	{{ form_label(form.prix) }}
+	{{ form_widget(form.prix)}}
+	<div class="form-error">{{ form_errors(form.prix) }}</div>
+
+	{{ form_end(form) }}
+		</div>
+{% endblock %}
